@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Cat Collector</title>
+  <title>Exercise Tracker</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href=" {% static 'css/style.css' %} ">
 </head>
@@ -14,12 +14,12 @@
     <nav>
       <div class="nav-wrapper">
         <ul>
-          <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Cat Collector</a></li>
+          <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Exercise Collector</a></li>
         </ul>
         <ul class="right">
-          <!-- <li><a href="{% url 'about' %}">About</a></li> -->
-          <!-- <li><a href="{% url 'cats_create' %}">Add an Exercise</a></li> -->
-          <!-- <li><a href="{% url 'index'%}">View All Exercises</a></li> -->
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'exercises_index' %}">View All Exercises</a></li>
+          <li><a href="{% url 'exercise_create' %}">Add An Exercise</a></li>
         </ul>
       </div>
     </nav>
@@ -29,7 +29,7 @@
 {% endblock %}
 </main>
 <footer class="page-footer">
-  <div class="right">All Rights Reserved, &copy; 2021 Cat Collector &nbsp;</div>
+  <div class="right">All Rights Reserved, &copy; 2021 Exercise Collector &nbsp;</div>
 </footer>
 </body>
 </html>
