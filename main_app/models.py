@@ -9,6 +9,5 @@ class Exercise(models.Model):
     directions: models.TextField(max_length=500)
     completed: models.BooleanField(default=False)
 
-
     def get_absolute_url(self):
         return reverse('detail', kwargs={'wine_id': self.id})
