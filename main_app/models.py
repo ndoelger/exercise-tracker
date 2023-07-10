@@ -3,10 +3,10 @@ from django.urls import reverse
  
 # Create your models here.
 class Exercise(models.Model):
-    name = models.CharField(max_length=100, default ='Exercise')
-    musclegroups = models.CharField(max_length=100, default ='Musclegroup')
-    intensity = models.IntegerField(default=0)
-    directions = models.TextField(max_length=500, default='direction')
+    name = models.CharField(max_length=100)
+    musclegroups = models.CharField(max_length=100)
+    intensity = models.IntegerField()
+    directions = models.TextField(max_length=500,)
     completed = models.BooleanField(default=False)
 
     def __str__(self):
