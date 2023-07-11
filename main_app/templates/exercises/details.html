@@ -18,7 +18,8 @@
   </div>
   <div class="col s6">
     <form action= "{% url 'add_completion' exercise.id %}" method="POST">
-      {% csrf_token %} {{completion_form.as_p}}
+      {% csrf_token %}
+      {{completion_form.as_p}}
       <input type="submit" class="btn" value="Add Record" />
     </form>
     <table class="striped">
@@ -50,7 +51,6 @@
     setDefaultDate: true,
     autoClose: true
   });
-
 </script>
 
 {% endblock %}

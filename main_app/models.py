@@ -13,7 +13,7 @@ class Exercise(models.Model):
         return self.name
     
     def get_absolute_url(self):
-        return reverse('exercise_details', kwargs={'pk': self.id})
+        return reverse('exercise_details', kwargs={'exercise_id': self.id})
     
 class Completion(models.Model):
     date = models.DateField('Exercise Date')
@@ -22,3 +22,6 @@ class Completion(models.Model):
     exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE)
     def __str__(self):
         return f"{self.date}, {self.reps}, {self.sets}, {self.exercise}"
+    
+    class Meta:
+        ordering = ['-date']

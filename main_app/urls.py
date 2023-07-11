@@ -11,4 +11,3 @@ urlpatterns = [
     path('exercises/<int:pk>/delete/', views.ExerciseDelete.as_view(), name='exercise_delete'),
     path('exercises/<int:exercise_id>/add_completion/', views.add_completion, name='add_completion'),
 ]
-
