@@ -7,10 +7,18 @@ class Exercise(models.Model):
     musclegroups = models.CharField(max_length=100)
     intensity = models.IntegerField()
     directions = models.TextField(max_length=500,)
-    completed = models.BooleanField(default=False)
+    # completed = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
     
     def get_absolute_url(self):
         return reverse('exercise_details', kwargs={'pk': self.id})
+    
+class Completion(models.Model):
+    date = models.DateField('Exercise Date')
+    reps = models.IntegerField()
+    sets = models.IntegerField()
+    exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE)
+    def __str__(self):
+        return f"{self.date}, {self.reps}, {self.sets}, {self.exercise}"

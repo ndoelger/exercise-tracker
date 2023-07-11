@@ -6,11 +6,6 @@
     <p>Muscle Group: {{ exercise.musclegroups }}</p>
     <p>Intensity: {{ exercise.intensity }}</p>
     <p>Directions: {{ exercise.directions }}</p>
-    {% if exercise.completed == True %}
-        <p>Completed? Yes</p>
-    {% elif exercise.completed == False %}
-        <p>Completed? No</p>
-    {% endif %}
   </div>
   <div class="card-action">
     <a href="{% url 'exercise_update' exercise.id %}">Edit</a>
