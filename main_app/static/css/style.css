@@ -13,3 +13,7 @@ body {
     text-align: right;
   }
   
+  footer.page-footer,
+  nav {
+    background-color: #874141;
+  }
