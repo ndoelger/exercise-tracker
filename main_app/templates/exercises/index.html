@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block content %} {% for exercise in exercises %}
+<a href="{% url 'exercise_details' exercise.id %}">
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">{{ exercise.name }}</span>
+    <p>Muscle Group: {{ exercise.musclegroups }}</p>
+    <p>Intensity: {{ exercise.intensity }}</p>
+    <p>Directions: {{ exercise.directions }}</p>
+  </div>
+  <div class="card-action">
+    <a href="{% url 'exercise_update' exercise.id %}">Edit</a>
+    <a href="{% url 'exercise_delete' exercise.id %}">Delete</a>
+  </div>
+</div>
+</a>
+
+{% endfor %} {% endblock %}
