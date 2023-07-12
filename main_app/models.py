@@ -4,7 +4,7 @@ from django.urls import reverse
 # Create your models here.
 class Exercise(models.Model):
     name = models.CharField(max_length=100)
-    musclegroups = models.CharField(max_length=100)
+    musclegroups = models.CharField('Muscle Groups', max_length=100)
     intensity = models.IntegerField()
     directions = models.TextField(max_length=500,)
     # completed = models.BooleanField(default=False)
@@ -25,3 +25,11 @@ class Completion(models.Model):
     
     class Meta:
         ordering = ['-date']
+
+
+class Photo(models.Model):
+    url = models.CharField(max_length=200)
+    exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"Photo for exercise: {self.exercise} @{self.url}"
